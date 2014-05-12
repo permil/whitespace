@@ -1,7 +1,9 @@
 PUSH num
-COPY
+DUP
+COPY num
 SWAP
 POP
+SLIDE num
 ADD
 SUB
 MUL

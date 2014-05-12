@@ -17,9 +17,11 @@ for i,line in enumerate(open(os.path.join('src',filename), 'r')):
     if len(commands) > 1: num = makenum(int(commands[1]))
 
     if   com == 'PUSH': f.write('  ' + num + '\n')
-    elif com == 'COPY': f.write(' \n ')
+    elif com == 'DUP': f.write(' \n ')
+    elif com == 'COPY': f.write(' \t ' + num + '\n')
     elif com == 'SWAP': f.write(' \n\t')
-    elif com == 'POP': f.write(' \n\n')
+    elif com == 'DROP': f.write(' \n\n')
+    elif com == 'SLIDE': f.write(' \t\n' + num + '\n')
     elif com == 'ADD': f.write('\t   ')
     elif com == 'SUB': f.write('\t  \t')
     elif com == 'MUL': f.write('\t  \n')
@@ -37,6 +39,6 @@ for i,line in enumerate(open(os.path.join('src',filename), 'r')):
     elif com == 'PRINTC': f.write('\t\n  ')
     elif com == 'PRINT': f.write('\t\n \t')
     elif com == 'INPUTC': f.write('\t\n\t ')
-    elif com == 'INPUT': f.write('\t\n\t\n')
+    elif com == 'INPUT': f.write('\t\n\t\t')
     else: print("ERROR: Unknown statement '%s' in line %d" % (line, i))
 
